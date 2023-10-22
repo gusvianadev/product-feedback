@@ -45,6 +45,7 @@ skip_feature_sets = [["ssr", "hydrate"]]
 
 [package.metadata.leptos]
 site-root = "target/site"
+site-pkg-dir = "pkg"
 tailwind-input-file = "style/tailwind.css"
 assets-dir = "public"
 site-addr = "127.0.0.1:3000"

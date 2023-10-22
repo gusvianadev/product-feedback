@@ -10,6 +10,6 @@ tmux send-keys -t $session:$window "v ." c-m
 
 window=2
 tmux new-window -t $session:$window -n "server"
-tmux send-keys -t $session:$window "cargo watch -x 'shuttle run --port 3000'" c-m
+tmux send-keys -t $session:$window "cargo leptos watch" c-m
 
 tmux attach-session -t $session
