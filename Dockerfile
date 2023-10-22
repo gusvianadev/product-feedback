@@ -28,16 +28,14 @@ FROM rustlang/rust:nightly-bullseye as runner
 COPY --from=builder /app/target/release/product-feedback /app/
 # /target/site contains our JS/WASM/CSS, etc.
 COPY --from=builder /app/target/site /app/site
-# Copy Cargo.toml if it’s needed at runtime
-COPY --from=builder /app/Cargo.toml /app/
 WORKDIR /app
 
 # Set any required env variables and
 ENV RUST_LOG="info"
 ENV APP_ENVIRONMENT="production"
-ENV LEPTOS_SITE_ADDR="0.0.0.0:8080"
+ENV LEPTOS_SITE_ADDR="0.0.0.0:8000"
 ENV LEPTOS_SITE_ROOT="site"
-EXPOSE 8080
+EXPOSE 8000
 
 # Run the server
 CMD ["/app/product-feedback"]
