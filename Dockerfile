@@ -30,7 +30,7 @@ COPY --from=builder /app/target/release/product-feedback /app/
 COPY --from=builder /app/target/site /app/site
 WORKDIR /app
 
-# Set any required env variables and
+# Set any required env variables
 ENV RUST_LOG="info"
 ENV APP_ENVIRONMENT="production"
 ENV LEPTOS_SITE_ADDR="0.0.0.0:8000"
